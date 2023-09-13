@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .gallery-item {
+            flex-basis: calc(33.33% - 10px);
+            margin: 5px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.2s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="gallery" id="imageGallery">
+        <!-- JavaScript will populate this section with images -->
+    </div>
+
+    <script>
+        // JavaScript to dynamically load images from the "images" folder
+        const gallery = document.getElementById("imageGallery");
+        const imagePath = "images/"; // Path to the folder containing images
+
+        // Use fetch to get a list of files in the "images" folder
+        fetch(imagePath)
+            .then(response => response.text())
+            .then(data => {
+                // Extract filenames from the directory listing
+                const filenames = data
+                    .split("\n")
+                    .filter(filename => filename.trim() !== "")
+                    .map(filename => filename.trim());
+
+                // Create gallery items for each image
+                filenames.forEach(filename => {
+                    const galleryItem = document.createElement("div");
+                    galleryItem.classList.add("gallery-item");
+
+                    const image = document.createElement("img");
+                    image.src = imagePath + filename;
+                    image.alt = filename;
+
+                    galleryItem.appendChild(image);
+                    gallery.appendChild(galleryItem);
+                });
+            })
+            .catch(error => console.error("Error fetching images:", error));
+    </script>
+</body>
+</html>
