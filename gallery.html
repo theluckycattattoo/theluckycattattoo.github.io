@@ -7,18 +7,21 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #333; /* Dark grey background color */
+            margin: 0;
+            padding: 0;
         }
 
         .gallery {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center; /* Center items horizontally */
             padding: 10px;
         }
 
         .gallery-item {
-            flex-basis: calc(33.33% - 10px);
-            margin: 5px;
+            flex: 0 0 calc(33.33% - 20px); /* 1 column on mobile, 3 columns on larger screens with spacing */
+            margin: 10px;
             overflow: hidden;
         }
 
@@ -35,7 +38,7 @@
     </style>
 </head>
 <body>
-    <h1>Image Gallery</h1>
+    <h1 style="color: #fff; text-align: center;">Image Gallery</h1>
     <div class="gallery" id="imageGallery">
         <!-- Images will be loaded from the hardcoded array -->
     </div>
@@ -43,29 +46,30 @@
     <script>
         // Hardcoded array of image file names
         const imageFilenames = [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg",
-    "15.jpg",
-    "16.jpg",
-    "17.jpg",
-    "18.jpg",
-    "19.jpg",
-    "20.jpg",
-    "21.jpg"
-    // Add more filenames as needed
-];
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg",
+            "6.jpg",
+            "7.jpg",
+            "8.jpg",
+            "9.jpg",
+            "10.jpg",
+            "11.jpg",
+            "12.jpg",
+            "13.jpg",
+            "14.jpg",
+            "15.jpg",
+            "16.jpg",
+            "17.jpg",
+            "18.jpg",
+            "19.jpg",
+            "20.jpg",
+            "21.jpg"
+            // Add more filenames as needed
+        ];
+
         const gallery = document.getElementById("imageGallery");
 
         // Loop through the hardcoded array and create gallery items
