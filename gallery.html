@@ -20,8 +20,8 @@
         }
 
         .gallery-item {
-            flex: 0 0 calc(33.33% - 20px); /* 1 column on mobile, 3 columns on larger screens with spacing */
-            margin: 10px;
+            flex: 0 0 calc(33.33% - 5px); /* 1 column on mobile, 3 columns on larger screens with reduced spacing */
+            margin: 5px;
             overflow: hidden;
         }
 
@@ -34,6 +34,13 @@
 
         .gallery-item img:hover {
             transform: scale(1.05);
+        }
+
+        /* Media query for screens narrower than 768px (typical iPhone width) */
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex: 0 0 calc(100% - 10px); /* 1 column with reduced spacing */
+            }
         }
     </style>
 </head>
