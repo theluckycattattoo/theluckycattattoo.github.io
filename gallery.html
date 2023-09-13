@@ -37,38 +37,33 @@
 <body>
     <h1>Image Gallery</h1>
     <div class="gallery" id="imageGallery">
-        <!-- JavaScript will populate this section with images -->
+        <!-- Images will be loaded from the hardcoded array -->
     </div>
 
     <script>
-        // JavaScript to dynamically load images from the "images" folder
+        // Hardcoded array of image file names
+        const imageFilenames = [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg"
+            // Add more filenames as needed
+        ];
+
         const gallery = document.getElementById("imageGallery");
-        const imagePath = "images/"; // Path to the folder containing images
 
-        // Use fetch to get a list of files in the "images" folder
-        fetch(imagePath)
-            .then(response => response.text())
-            .then(data => {
-                // Extract filenames from the directory listing
-                const filenames = data
-                    .split("\n")
-                    .filter(filename => filename.trim() !== "")
-                    .map(filename => filename.trim());
+        // Loop through the hardcoded array and create gallery items
+        imageFilenames.forEach(filename => {
+            const galleryItem = document.createElement("div");
+            galleryItem.classList.add("gallery-item");
 
-                // Create gallery items for each image
-                filenames.forEach(filename => {
-                    const galleryItem = document.createElement("div");
-                    galleryItem.classList.add("gallery-item");
+            const image = document.createElement("img");
+            image.src = "images/" + filename; // Assuming images are in the "images" folder
+            image.alt = filename;
 
-                    const image = document.createElement("img");
-                    image.src = imagePath + filename;
-                    image.alt = filename;
-
-                    galleryItem.appendChild(image);
-                    gallery.appendChild(galleryItem);
-                });
-            })
-            .catch(error => console.error("Error fetching images:", error));
+            galleryItem.appendChild(image);
+            gallery.appendChild(galleryItem);
+        });
     </script>
 </body>
 </html>
