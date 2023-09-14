@@ -1,0 +1,147 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #272423; /* Dark grey background color */
+    margin: 0;
+    padding: 0;
+}
+
+.titlebar {
+    background-color: #222; /* Background color for the titlebar */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Space between elements */
+    align-items: flex-start;
+}
+
+.home-link {
+    text-decoration: none;
+    font-family: 'Helvetica', sans-serif; /* Use a professional-looking font */
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: #fff; /* Text color */
+    text-transform: uppercase; /* Convert text to uppercase */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center text horizontally */
+}
+
+.home-link:hover {
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.home-link .tattoo {
+    color: orange; /* Set the color for "Tattoo" */
+    letter-spacing: 2px; /* Adjust character spacing */
+}
+
+.button-link {
+    text-decoration: none;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+
+/* Updated styles for the subpage links */
+.subpage-links {
+    display: flex;
+}
+
+
+.button-link:hover {
+    text-decoration: none;
+}
+
+/* Updated styles for the burger menu */
+.burger-menu {
+    font-size: 36px; /* Increase the burger menu icon size */
+    cursor: pointer;
+    color: #eee; /* Set the burger menu icon color to off-white */
+    margin-right: 10px; /* Add space to the right of the burger menu icon */
+}
+
+.burger-menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #222;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: none; /* Hide the burger menu list initially */
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.burger-menu-list li {
+    margin: 10px 0;
+}
+
+.burger-menu:hover .burger-menu-list {
+    visibility: visible; /* Show menu items on hover */
+}
+
+.gallery {
+    column-gap: 20px; /* Increased gap between columns */
+    padding: 10px;
+}
+
+.gallery-item {
+    margin-bottom: 20px; /* Increased margin between items */
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.2s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Media queries for responsive layout */
+@media (min-width: 1024px) {
+    .gallery {
+        column-count: 3; /* Maximum 3 columns for larger screens */
+    }
+}
+
+@media (max-width: 1023px) {
+    .gallery {
+        column-count: 2; /* 2 columns for screens up to 1023px wide */
+    }
+}
+
+@media (max-width: 767px) {
+    .gallery {
+        column-count: 1; /* 1 column for screens up to 767px wide (e.g., mobile) */
+    }
+
+    .burger-menu {
+        display: block; /* Show the burger menu for smaller screens */
+    }
+
+    .button-link {
+        display: none; /* Hide the buttons when burger menu is visible */
+    }
+
+    /* Hide the subpage links */
+    .subpage-links {
+        display: none;
+    }
+
+    /* Show the burger menu list on burger menu click */
+    .burger-menu.active + .burger-menu-list {
+        display: flex;
+    }
+}
