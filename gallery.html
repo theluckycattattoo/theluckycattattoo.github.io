@@ -13,13 +13,11 @@
         }
 
         .gallery {
-            column-count: 3; /* Maximum 3 columns */
             column-gap: 20px; /* Increased gap between columns */
             padding: 10px;
         }
 
         .gallery-item {
-            break-inside: avoid-column; /* Prevent items from breaking across columns */
             margin-bottom: 20px; /* Increased margin between items */
             position: relative;
         }
@@ -33,6 +31,25 @@
 
         .gallery-item img:hover {
             transform: scale(1.05);
+        }
+
+        /* Media queries for responsive layout */
+        @media (min-width: 1024px) {
+            .gallery {
+                column-count: 3; /* Maximum 3 columns for larger screens */
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .gallery {
+                column-count: 2; /* 2 columns for screens up to 1023px wide */
+            }
+        }
+
+        @media (max-width: 767px) {
+            .gallery {
+                column-count: 1; /* 1 column for screens up to 767px wide (e.g., mobile) */
+            }
         }
     </style>
 </head>
