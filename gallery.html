@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery</title>
+    <title>Featured Work</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #333; /* Dark grey background color */
+            background-color: #272423; /* Dark grey background color */
             margin: 0;
             padding: 0;
         }
@@ -15,12 +15,13 @@
         .gallery {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Center items horizontally */
+            justify-content: space-between;
             padding: 10px;
+            margin: -5px; /* Negative margin to offset the item margins */
         }
 
         .gallery-item {
-            flex: 0 0 calc(33.33% - 5px); /* 1 column on mobile, 3 columns on larger screens with reduced spacing */
+            flex: 0 0 calc(33.33% - 10px); /* 3 columns on larger screens with uniform spacing */
             margin: 5px;
             overflow: hidden;
         }
@@ -36,19 +37,36 @@
             transform: scale(1.05);
         }
 
-        /* Media query for screens narrower than 768px (typical iPhone width) */
-        @media (max-width: 768px) {
+        /* Media queries */
+        @media (max-width: 1024px) { /* 2 columns on screens up to 1024px wide */
             .gallery-item {
-                flex: 0 0 calc(100% - 10px); /* 1 column with reduced spacing */
+                flex: 0 0 calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 768px) { /* 1 column on mobile screens (e.g., iPhone) */
+            .gallery-item {
+                flex: 0 0 calc(100% - 10px);
             }
         }
     </style>
 </head>
 <body>
-    <h1 style="color: #fff; text-align: center;">Image Gallery</h1>
+    <h1 style="color: #fff; text-align: center;">Featured Work</h1>
     <div class="gallery" id="imageGallery">
         <!-- Images will be loaded from the hardcoded array -->
     </div>
+
+    <footer style="background-color: #222; padding: 20px; text-align: center;">
+        <div>
+            <!-- Text above social media buttons -->
+            <p style="color: #fff;">The Lucky Cat Tattoo -- 98, Triq San Bartilmew, Gharghur, Malta</p>
+            <!-- Social media buttons with links -->
+            <a href="mailto:info@theluckycat.net"><img src="google.svg" alt="Email" width="32" height="32"></a>
+            <a href="https://www.instagram.com/theluckycattattoo/"><img src="instagram.svg" alt="Instagram" width="32" height="32"></a>
+            <a href="https://www.facebook.com/theluckycat.tattoo/"><img src="facebook.svg" alt="Facebook" width="32" height="32"></a>
+        </div>
+    </footer>
 
     <script>
         // Hardcoded array of image file names
