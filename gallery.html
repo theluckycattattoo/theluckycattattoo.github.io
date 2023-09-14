@@ -12,6 +12,55 @@
             padding: 0;
         }
 
+        .titlebar {
+            background-color: #222; /* Background color for the titlebar */
+            padding: 10px;
+            text-align: left;
+            display: flex;
+            justify-content: flex-start; /* Align content to the top left */
+            align-items: flex-start; /* Align items to the top left */
+        }
+
+        .home-link {
+            text-decoration: none;
+            font-family: 'Helvetica', sans-serif; /* Use a professional-looking font */
+            font-size: 24px; /* Adjust the font size as needed */
+            font-weight: bold; /* Make the text bold */
+            color: #fff; /* Text color */
+            text-transform: uppercase; /* Convert text to uppercase */
+            margin-right: 20px; /* Add space to separate buttons */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center text horizontally */
+        }
+
+        .home-link:hover {
+            text-decoration: none; /* Remove underline on hover */
+        }
+
+        .home-link .tattoo {
+            color: orange; /* Set the color for "Tattoo" */
+            letter-spacing: 2px; /* Adjust character spacing */
+        }
+
+        .button-link {
+            text-decoration: none;
+            font-family: 'Helvetica', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .button-link:hover {
+            text-decoration: none;
+        }
+
         .gallery {
             column-gap: 20px; /* Increased gap between columns */
             padding: 10px;
@@ -54,7 +103,14 @@
     </style>
 </head>
 <body>
-    <h1 style="color: #fff; text-align: center;">Featured Work</h1>
+    <div class="titlebar">
+        <a href="#" class="home-link">
+            <div>The Lucky Cat</div>
+            <div class="tattoo">Tattoo</div>
+        </a>
+        <a href="#" class="button-link">Featured Works</a>
+        <a href="#" class="button-link">Contact</a>
+    </div>
     <div class="gallery" id="imageGallery">
         <!-- Images will be loaded from the hardcoded array -->
     </div>
@@ -62,7 +118,7 @@
     <footer style="background-color: #222; padding: 20px; text-align: center;">
         <div>
             <!-- Text above social media buttons -->
-            <p style="color: #fff;">The Lucky Cat Tattoo -- 98, Triq San Bartilmew, Gharghur, Malta</p>
+            <p style="color: #fff;">98, Triq San Bartilmew, Gharghur, Malta</p>
             <!-- Social media buttons with links -->
             <a href="mailto:info@theluckycat.net"><img src="google.svg" alt="Email" width="32" height="32"></a>
             <a href="https://www.instagram.com/theluckycattattoo/"><img src="instagram.svg" alt="Instagram" width="32" height="32"></a>
