@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Lucky Cat Tattoo</title>
-    <link rel="stylesheet" href="styles.css"> <!-- External CSS file for styling -->
-    <style>
-        /* Add any inline CSS styles here if needed */
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- General styles -->
+    <link rel="stylesheet" href="menu.css"> <!-- Navigation bar styles -->
+    <link rel="stylesheet" href="footer.css"> <!-- Footer styles -->
+    <!-- Add more links for other CSS files as needed -->
+    <script src="script.js"></script> <!-- External JavaScript file for script -->
 </head>
+
 <body>
     <div class="titlebar">
         <a href="#" class="home-link">
             <div>The Lucky Cat</div>
             <div class="tattoo">Tattoo</div>
         </a>
-        <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
-        <!-- Updated subpage links within the burger menu list -->
-        <ul id="burger-menu-list" class="burger-menu-list">
-            <li><a href="#" class="button-link">Featured Works</a></li>
-            <li><a href="#" class="button-link">Contact</a></li>
-        </ul>
-    </div>
-    <div class="gallery" id="imageGallery">
-        <!-- Images will be loaded from the hardcoded array -->
-    </div>
-
-    <footer style="background-color: #222; padding: 20px; text-align: center;">
-        <div>
-            <p>98, Triq San Bartilmew, Gharghur, Malta</p>
-            <a href="mailto:info@theluckycat.net"><img src="google.svg" alt="Email" width="32" height="32"></a>
-            <a href="https://www.instagram.com/theluckycattattoo/"><img src="instagram.svg" alt="Instagram" width="32" height="32"></a>
-            <a href="https://www.facebook.com/theluckycat.tattoo/"><img src="facebook.svg" alt="Facebook" width="32" height="32"></a>
+        <!-- Burger menu button for mobile -->
+        <div class="burger-menu" id="burger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
-    </footer>
-
-    <script src="script.js"></script> <!-- External JavaScript file for script -->
+    </div>
+    <div class="page-content"> <!-- Wrap the content in a container div -->
+        <div class="gallery" id="imageGallery">
+            <!-- Images will be loaded from the hardcoded array -->
+        </div>
+        <div class="subpage-container">
+            <div class="subpage-links">
+                <a href="#" class="button-link">Featured Works</a>
+                <a href="#" class="button-link">Contact</a>
+                <!-- Add more links as needed -->
+            </div>
+        </div>
+        <footer>
+            <div>
+                <div class="address">
+                    <p>98, Triq San Bartilmew, Gharghur, Malta</p>
+                </div>
+                <div>
+                    <a href="mailto:info@theluckycat.net" aria-label="Mail to" class="social">
+                        <img src="google.svg" alt="Email">
+                    </a>
+                    <a href="https://www.instagram.com/theluckycattattoo/" aria-label="Instagram" class="social">
+                        <img src="instagram.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/theluckycat.tattoo/" aria-label="Facebook" class="social">
+                        <img src="facebook.svg" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>

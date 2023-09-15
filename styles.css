@@ -1,138 +1,140 @@
-/* styles.css */
+/* Reset some default browser styles */
+body,
+ul,
+li,
+p {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #272423; /* Dark grey background color */
+    background-color: #272423;
+    /* Dark grey background color */
     margin: 0;
     padding: 0;
 }
 
 .titlebar {
-    background-color: #222; /* Background color for the titlebar */
+    background-color: #272423;
+    /* Background color for the titlebar */
     padding: 10px;
     display: flex;
-    justify-content: space-between; /* Space between elements */
+    justify-content: space-between;
+    /* Space between elements */
     align-items: flex-start;
+    margin-bottom: 20px;
+    /* Adjust as needed */
 }
 
 .home-link {
     text-decoration: none;
-    font-family: 'Helvetica', sans-serif; /* Use a professional-looking font */
-    font-size: 24px; /* Adjust the font size as needed */
-    font-weight: bold; /* Make the text bold */
-    color: #fff; /* Text color */
-    text-transform: uppercase; /* Convert text to uppercase */
+    font-family: "Helvetica", sans-serif;
+    /* Use a professional-looking font */
+    font-size: 28px;
+    /* Adjust the font size as needed */
+    font-weight: bold;
+    /* Make the text bold */
+    color: #fff;
+    /* Text color */
+    text-transform: uppercase;
+    /* Convert text to uppercase */
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center text horizontally */
-}
-
-.home-link:hover {
-    text-decoration: none; /* Remove underline on hover */
+    align-items: flex-start;
+    /* Position the home-link in the top-left corner */
+    margin: 0;
+    /* Remove margin for precise positioning */
 }
 
 .home-link .tattoo {
-    color: orange; /* Set the color for "Tattoo" */
-    letter-spacing: 8px; /* Adjust character spacing */
+    color: orange;
+    /* Set the color for "Tattoo" */
+    letter-spacing: 2px;
+    /* Adjust character spacing */
+}
+
+.home-link:hover {
+    text-decoration: none;
+    /* Remove underline on hover */
+}
+
+.page-content {
+    /* Add a min-height to accommodate gallery and footer */
+    min-height: calc(100vh - 60px); /* Adjust 60px to match the height of the gallery and footer */
+}
+
+/* Updated styles for the subpage-links container */
+.subpage-links {
+    position: absolute;
+    /* Position the container absolutely */
+    top: 30px;
+    /* Align it to the top */
+    right: 50px;
+    /* Align it to the right */
+    display: flex;
+    /* Push subpage links to the right */
 }
 
 .button-link {
     text-decoration: none;
-    font-family: 'Helvetica', sans-serif;
-    font-size: 16px;
+    font-family: "Helvetica", sans-serif;
+    font-size: 20px;
     font-weight: bold;
     color: #fff;
     text-transform: uppercase;
-    margin-left: 10px;
+    margin-left: 20px;
 }
-
-
-/* Updated styles for the subpage links */
-.subpage-links {
-    display: flex;
-}
-
 
 .button-link:hover {
     text-decoration: none;
 }
 
-/* Updated styles for the burger menu */
-.burger-menu {
-    font-size: 36px; /* Increase the burger menu icon size */
-    cursor: pointer;
-    color: #fff; /* Set the burger menu icon color to off-white */
-    margin-right: 10px; /* Add space to the right of the burger menu icon */
-}
-
-.burger-menu-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    background-color: #222;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    display: none; /* Hide the burger menu list initially */
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.burger-menu-list li {
-    margin: 10px 0;
-}
-
-..burger-menu:hover .burger-menu-list {
-            visibility: visible; /* Show menu items on hover */
-}
-
+/* Restore responsiveness to the image gallery */
 .gallery {
-    column-gap: 20px; /* Increased gap between columns */
+    column-gap: 20px;
+    /* Increased gap between columns */
+    column-count: 3;
     padding: 10px;
+    margin-top: 60px;
+    /* Adjusted margin to push down the content */
 }
 
 .gallery-item {
-    margin-bottom: 20px; /* Increased margin between items */
+    margin-bottom: 20px;
+    /* Increased margin between items */
     position: relative;
 }
 
+/* Add rounded edges to images */
 .gallery-item img {
     width: 100%;
     height: auto;
     display: block;
     transition: transform 0.2s;
+    border-radius: 10px;
+    /* Rounded edges */
 }
 
 .gallery-item img:hover {
     transform: scale(1.05);
 }
 
-/* Media queries for responsive layout */
-@media (min-width: 1024px) {
-    .gallery {
-        column-count: 3; /* Maximum 3 columns for larger screens */
-    }
-}
-
+/* Media query for responsive layout */
 @media (max-width: 1023px) {
     .gallery {
-        column-count: 2; /* 2 columns for screens up to 1023px wide */
+        column-count: 2;
+        /* 2 columns for screens up to 1023px wide */
     }
 }
 
+/* Media query for mobile layout */
 @media (max-width: 767px) {
+
     .gallery {
-        column-count: 1; /* 1 column for screens up to 767px wide (e.g., mobile) */
-    }
-
-    .burger-menu {
-        display: block; /* Show the burger menu for smaller screens */
-    }
-
-    .button-link {
-        display: none; /* Hide the buttons when burger menu is visible */
+        column-count: 1;
+        /* 1 column for screens up to 767px wide (e.g., mobile) */
     }
 
     /* Hide the subpage links */
@@ -140,8 +142,104 @@ body {
         display: none;
     }
 
-    /* Show the burger menu list on burger menu click */
-    .burger-menu.active + .burger-menu-list {
-        display: flex;
+    /* Styles for the burger menu */
+    .burger-menu {
+        font-size: 24px;
+        cursor: pointer;
+        color: #eee;
+        position: absolute;
+        top: 22px;
+        right: 30px;
+        /* Move the menu bars to the left */
+        display: block;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
     }
+
+    /* Styles for the burger bars */
+    .bar {
+        width: 30px;
+        /* Width of the lines */
+        height: 4px;
+        /* Height of the lines */
+        background-color: #eee;
+        /* Line color */
+        margin: 10px 0;
+        /* Increase the vertical gap between bars */
+        transition: transform 0.3s ease-in-out;
+        /* Smooth transition for animation */
+    }
+
+    /* Animation for the burger bars when active */
+    .burger-menu.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+        /* Rotate and move first line */
+    }
+
+    .burger-menu.active .bar:nth-child(2) {
+        transform: translateY(-7px) rotate(-45deg);
+        /* Rotate and move second line */
+    }
+
+    /* Style for subpage links in the list when active */
+    .subpage-links.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center align horizontally */
+        justify-content: center;
+        /* Center align vertically */
+        height: 100vh;
+        /* Full viewport height */
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+
+    /* Style for subpage links in the list */
+    .subpage-links.show .button-link {
+        font-size: 24px;
+        /* Adjust size as needed */
+        margin: 10px 0;
+        /* Adjust spacing */
+        display: flex;
+        align-items: flex-start;
+        /* Align links to the left */
+    }
+
+    /* Hide the gallery and footer when subpage links are shown */
+    .gallery.hide,
+    footer.hide .address {
+        display: none;
+    }
+}
+
+/* Styles for the footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Stick to the bottom of the viewport */
+    width: 100%; /* Full width */
+}
+
+footer .address {
+    margin-bottom: 10px;
+    display: block;
+}
+
+footer .social {
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Styles for social media icons in the footer */
+footer .social img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    /* Add some spacing between icons */
 }
