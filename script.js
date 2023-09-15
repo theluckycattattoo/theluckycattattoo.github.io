@@ -1,19 +1,11 @@
 // script.js
 
 document.addEventListener("DOMContentLoaded", function () {
-    let menuVisible = false;
+    const burgerMenu = document.querySelector(".burger-menu");
 
-    function toggleMenu() {
-        const burgerMenuList = document.getElementById("burger-menu-list");
-
-        if (menuVisible) {
-            burgerMenuList.style.visibility = "hidden";
-        } else {
-            burgerMenuList.style.visibility = "visible";
-        }
-
-        menuVisible = !menuVisible;
-    }
+    burgerMenu.addEventListener("click", function () {
+        burgerMenu.classList.toggle("active"); // Toggle the "active" class on the burger menu
+    });
 
     // Hardcoded array of image file names
     const imageFilenames = [
@@ -37,7 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "18.jpg",
         "19.jpg",
         "20.jpg",
-        "21.jpg"
+        "21.jpg",
+        "22.jpg",
+        "23.jpg",
+        "24.jpg",
+        "25.jpg",
+        "26.jpg",
+        "27.jpg",
+        "28.jpg"
         // Add more filenames as needed
     ];
 

@@ -34,7 +34,7 @@ body {
 
 .home-link .tattoo {
     color: orange; /* Set the color for "Tattoo" */
-    letter-spacing: 2px; /* Adjust character spacing */
+    letter-spacing: 8px; /* Adjust character spacing */
 }
 
 .button-link {
@@ -62,7 +62,7 @@ body {
 .burger-menu {
     font-size: 36px; /* Increase the burger menu icon size */
     cursor: pointer;
-    color: #eee; /* Set the burger menu icon color to off-white */
+    color: #fff; /* Set the burger menu icon color to off-white */
     margin-right: 10px; /* Add space to the right of the burger menu icon */
 }
 
@@ -84,8 +84,8 @@ body {
     margin: 10px 0;
 }
 
-.burger-menu:hover .burger-menu-list {
-    visibility: visible; /* Show menu items on hover */
+..burger-menu:hover .burger-menu-list {
+            visibility: visible; /* Show menu items on hover */
 }
 
 .gallery {
