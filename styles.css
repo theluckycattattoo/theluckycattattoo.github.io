@@ -18,6 +18,7 @@ body {
 .titlebar {
     padding: 30px;
     display: flex;
+    background-color: #222;
     justify-content: space-between;
     /* Space between elements */
     align-items: flex-start;
@@ -51,7 +52,7 @@ body {
     font-weight: bolder;
     /* Set the color for "Tattoo" */
     letter-spacing: 5px;
-    margin-top: -20px
+    margin-top: -18px
     /* Adjust character spacing */
 }
 
@@ -189,7 +190,7 @@ body {
         /* Center align horizontally */
         justify-content: center;
         /* Center align vertically */
-        height: 70vh;
+        height: 60vh;
         /* Full viewport height */
         opacity: 1;
         transform: translateY(0);
