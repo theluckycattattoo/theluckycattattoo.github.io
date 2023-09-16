@@ -16,22 +16,19 @@ body {
 }
 
 .titlebar {
-    background-color: #272423;
-    /* Background color for the titlebar */
-    padding: 10px;
+    padding: 30px;
     display: flex;
     justify-content: space-between;
     /* Space between elements */
     align-items: flex-start;
-    margin-bottom: 20px;
-    /* Adjust as needed */
+    margin-bottom: 10px;
 }
 
 .home-link {
     text-decoration: none;
     font-family: "Helvetica", sans-serif;
     /* Use a professional-looking font */
-    font-size: 28px;
+    font-size: 30px;
     /* Adjust the font size as needed */
     font-weight: bold;
     /* Make the text bold */
@@ -49,9 +46,12 @@ body {
 }
 
 .home-link .tattoo {
+    font-size: 49px;
     color: orange;
+    font-weight: bolder;
     /* Set the color for "Tattoo" */
-    letter-spacing: 2px;
+    letter-spacing: 5px;
+    margin-top: -20px
     /* Adjust character spacing */
 }
 
@@ -69,7 +69,7 @@ body {
 .subpage-links {
     position: absolute;
     /* Position the container absolutely */
-    top: 30px;
+    top: 60px;
     /* Align it to the top */
     right: 50px;
     /* Align it to the right */
@@ -80,25 +80,26 @@ body {
 .button-link {
     text-decoration: none;
     font-family: "Helvetica", sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: #fff;
     text-transform: uppercase;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .button-link:hover {
     text-decoration: none;
 }
 
-/* Restore responsiveness to the image gallery */
+/* Add margins to the sides of the gallery */
 .gallery {
     column-gap: 20px;
-    /* Increased gap between columns */
     column-count: 3;
     padding: 10px;
-    margin-top: 60px;
-    /* Adjusted margin to push down the content */
+    margin-top: 0px;
+    margin-left: 20px; /* Add margin to the left */
+    margin-right: 20px; /* Add margin to the right */
+    overflow: hidden; /* Add overflow hidden to prevent overlapping */
 }
 
 .gallery-item {
@@ -107,19 +108,20 @@ body {
     position: relative;
 }
 
-/* Add rounded edges to images */
+/* Improved zoom animation for gallery images */
 .gallery-item img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.2s;
-    border-radius: 10px;
-    /* Rounded edges */
+    transition: transform 0.3s; /* Slightly slower transition for smoother animation */
+    border-radius: 5px;
+    margin: 0; /* Remove default margin */
 }
 
 .gallery-item img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1); /* Increase the scale for a cooler zoom effect */
 }
+
 
 /* Media query for responsive layout */
 @media (max-width: 1023px) {
@@ -147,21 +149,18 @@ body {
         font-size: 24px;
         cursor: pointer;
         color: #eee;
-        position: absolute;
-        top: 22px;
-        right: 30px;
         /* Move the menu bars to the left */
         display: block;
         flex-direction: column;
         align-items: center;
-        z-index: 2;
+        margin-top: 9px
     }
 
     /* Styles for the burger bars */
     .bar {
-        width: 30px;
+        width: 40px;
         /* Width of the lines */
-        height: 4px;
+        height: 6px;
         /* Height of the lines */
         background-color: #eee;
         /* Line color */
@@ -173,12 +172,12 @@ body {
 
     /* Animation for the burger bars when active */
     .burger-menu.active .bar:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
         /* Rotate and move first line */
     }
 
     .burger-menu.active .bar:nth-child(2) {
-        transform: translateY(-7px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
         /* Rotate and move second line */
     }
 
@@ -190,18 +189,19 @@ body {
         /* Center align horizontally */
         justify-content: center;
         /* Center align vertically */
-        height: 100vh;
+        height: 70vh;
         /* Full viewport height */
         opacity: 1;
         transform: translateY(0);
         transition: opacity 0.3s, transform 0.3s;
+        position: inherit;
     }
 
     /* Style for subpage links in the list */
     .subpage-links.show .button-link {
-        font-size: 24px;
+        font-size: 30px;
         /* Adjust size as needed */
-        margin: 10px 0;
+        margin: 40px 0;
         /* Adjust spacing */
         display: flex;
         align-items: flex-start;
@@ -210,6 +210,9 @@ body {
 
     /* Hide the gallery and footer when subpage links are shown */
     .gallery.hide,
+    .page-content.hide{
+        display: none;
+    }
     footer.hide .address {
         display: none;
     }
@@ -221,7 +224,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: fixed; /* Fixed position */
+    position: relative; /* relative position */
     bottom: 0; /* Stick to the bottom of the viewport */
     width: 100%; /* Full width */
 }
@@ -231,15 +234,20 @@ footer .address {
     display: block;
 }
 
-footer .social {
+/* Style for social media icons */
+.social {
     text-decoration: none;
-    margin: 0 10px;
+    font-size: 32px; /* Set the icon size */
+    color: orange; /* Set the icon color */
+    transition: transform 0.2s ease-in-out; /* Add a subtle hover effect */
+    margin-right: 10px; /* Add spacing between icons if needed */
+}
+
+.social:hover {
+    transform: scale(1.2); /* Increase size on hover for a pop-out effect */
 }
 
 /* Styles for social media icons in the footer */
-footer .social img {
-    width: 32px;
-    height: 32px;
-    margin-right: 10px;
-    /* Add some spacing between icons */
+footer .social span {
+    font-size: 32px; /* Set the desired font size */
 }

@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const burgerMenu = document.getElementById("burger-menu");
     const subpageLinks = document.querySelector(".subpage-links");
-    const gallerySection = document.querySelector(".gallery");
+    const pagecontentSection = document.querySelector(".page-content");
     const footerSection = document.querySelector("footer");
 
     // Add a click event listener to the burger menu
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
         subpageLinks.classList.toggle("show");
 
         // Toggle the 'hide' class on the gallery and footer to hide them
-        gallerySection.classList.toggle("hide");
+        pagecontentSection.classList.toggle("hide");
         footerSection.classList.toggle("hide");
     });
 });
