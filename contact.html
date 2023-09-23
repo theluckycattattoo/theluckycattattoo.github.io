@@ -30,18 +30,32 @@
         </div>
     </div>
     <div class="page-content"> <!-- Wrap the content in a container div -->
-        <div class="form" id="form">
+        <form accept-charset="utf-8" action="https://formspree.io/f/mrgwyjzd" method="post"
+            enctype="multipart/form-data">
+            <h1>Contact Us</h1>
+            <h2>Get in touch to book a consultation with us</h2>
+            <h2>Please upload any reference images below</h2>
+            <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+            <input type="email" name="_replyto" id="email-address" placeholder="Email Address" required="">
+            <input type="file" name="upload" accept="image/png, image/jpeg" multiple>
+            <textarea rows="5" name="message" id="message" placeholder="Enter your message here" required=""></textarea>
+            <input type="hidden" name="_subject" id="email-subject" value="Website Form Submission">
+            <button type="submit">Send Message</button>
+        </form>
+        <!--
+
             <form action="mailto:info@theluckycat.net" method="post">
                 <h1>Contact Us</h1>
                 <h2>Get in touch to book a consultation with us.</h2>
                 <input type="text" name="first" placeholder="First Name" autocomplete="off" required>
                 <input type="text" name="last" placeholder="Last Name" autocomplete="off" required>
                 <input type="text" name="email" placeholder="Email Address" autocomplete="off" required>
-                <textarea rows="5" cols="60" name="messege" placeholder="Type Messege Here" autocomplete="off"
+                <textarea rows="5" cols="60" name="message" placeholder="Type Message Here" autocomplete="off"
                     required></textarea>
                 <button type="submit">Send Message</button>
             </form>
-        </div>
+                        -->
+
         <div>
             <img class="logo" src="logo.png">
         </div>

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Hardcoded array of image file names
         const imageFilenames = [];
         for (let i = 1; i <= 101; i++) {
-            imageFilenames.push(`${i}.jpg`);
+            imageFilenames.push(`${i}.JPG`);
         }
 
         // Loop through the hardcoded array and create gallery items
@@ -13,8 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
             galleryItem.classList.add("gallery-item");
 
             const image = document.createElement("img");
-            image.src = "images/" + filename; // Assuming images are in the "images" folder
+            image.src = "/images/" + filename; // Assuming images are in the "images" folder
             image.alt = filename;
+            image.loading = "lazy";
 
             galleryItem.appendChild(image);
             gallery.appendChild(galleryItem);
