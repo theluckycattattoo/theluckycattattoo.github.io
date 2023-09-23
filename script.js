@@ -1,24 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Hardcoded array of image file names
-    const imageFilenames = [];
-    for (let i = 1; i <= 101; i++) {
-        imageFilenames.push(`${i}.jpg`);
-    }    
+    if (document.getElementById("imageGallery")) {
+        const gallery = document.getElementById("imageGallery");
+        // Hardcoded array of image file names
+        const imageFilenames = [];
+        for (let i = 1; i <= 101; i++) {
+            imageFilenames.push(`${i}.jpg`);
+        }
 
-    const gallery = document.getElementById("imageGallery");
+        // Loop through the hardcoded array and create gallery items
+        imageFilenames.forEach((filename) => {
+            const galleryItem = document.createElement("div");
+            galleryItem.classList.add("gallery-item");
 
-    // Loop through the hardcoded array and create gallery items
-    imageFilenames.forEach((filename) => {
-        const galleryItem = document.createElement("div");
-        galleryItem.classList.add("gallery-item");
+            const image = document.createElement("img");
+            image.src = "images/" + filename; // Assuming images are in the "images" folder
+            image.alt = filename;
 
-        const image = document.createElement("img");
-        image.src = "images/" + filename; // Assuming images are in the "images" folder
-        image.alt = filename;
-
-        galleryItem.appendChild(image);
-        gallery.appendChild(galleryItem);
-    });
+            galleryItem.appendChild(image);
+            gallery.appendChild(galleryItem);
+        });
+    }
 
     const burgerMenu = document.getElementById("burger-menu");
     const subpageLinks = document.querySelector(".subpage-links");
