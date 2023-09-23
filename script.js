@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             galleryItem.classList.add("gallery-item");
 
             const image = document.createElement("img");
-            image.src = "/images/" + filename; // Assuming images are in the "images" folder
+            image.src = "images/" + filename; // Assuming images are in the "images" folder
             image.alt = filename;
             image.loading = "lazy";
 
