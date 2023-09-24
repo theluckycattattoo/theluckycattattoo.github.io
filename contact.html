@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="styles.css"> <!-- General styles -->
     <script src="script.js"></script> <!-- External JavaScript file for script -->
     <script src="https://kit.fontawesome.com/8f2f6f50fd.js" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("form").submit();
+        }
+    </script>
 </head>
 
 <body>
@@ -31,7 +37,7 @@
     </div>
     <div class="page-content"> <!-- Wrap the content in a container div https://formspree.io/f/mrgwyjzd -->
         <form accept-charset="utf-8" action="https://smartforms.dev/submit/65104eca0dd8ac0a53212c98" method="post"
-            enctype="multipart/form-data">
+            enctype="multipart/form-data" id="form">
             <h1>Contact Us</h1>
             <h2>Get in touch to book a consultation with us</h2>
             <h2>Please upload any reference images below</h2>
@@ -40,8 +46,8 @@
             <input type="file" name="upload" accept="image/png, image/jpeg" multiple>
             <textarea rows="5" name="message" id="message" placeholder="Enter your message here" required=""></textarea>
             <input type="hidden" name="_subject" id="email-subject" value="Website Form Submission">
-            <div class="g-recaptcha" data-sitekey="6LdDBE4oAAAAAFFmGbL9GO2r4fl6azlbEqE7Tzuq"></div>
-            <button type="submit">Send Message</button>
+            <button class="g-recaptcha" type="submit" data-sitekey="6LdDBE4oAAAAAFFmGbL9GO2r4fl6azlbEqE7Tzuq" data-callback='onSubmit'
+                data-action='submit'>Send Message</button>
         </form>
         <div>
             <img class="logo" src="logo.png">
