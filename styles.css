@@ -139,6 +139,10 @@ body {
 /* Media query for mobile layout */
 @media (max-width: 854px) {
 
+    form#form {
+        margin: -30px
+    }
+    
     .gallery {
         column-count: 1;
         /* 1 column for screens up to 767px wide (e.g., mobile) */
@@ -155,9 +159,10 @@ body {
         cursor: pointer;
         color: #eee;
         /* Move the menu bars to the left */
-        margin-top: -20px display: block;
+        margin-top: -20px;
+        display: block;
         flex-direction: column;
-        align-items: center;
+        align-items: center
     }
 
     /* Styles for the burger bars */
