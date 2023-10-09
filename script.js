@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const gallery = document.getElementById("imageGallery");
         // Hardcoded array of image file names
         const imageFilenames = [];
-        for (let i = 1; i <= 101; i++) {
+        for (let i = 1; i <= 100; i++) {
             imageFilenames.push(`${i}.JPG`);
         }
 
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const image = document.createElement("img");
             image.src = "images/" + filename; // Assuming images are in the "images" folder
             image.alt = filename;
-            image.loading = "lazy";
+            image.setAttribute("loading", "lazy"); // Correct way to set the loading attribute
 
             galleryItem.appendChild(image);
             gallery.appendChild(galleryItem);

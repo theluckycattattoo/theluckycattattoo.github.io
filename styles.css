@@ -9,20 +9,18 @@ p {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #272423;
+    background-color: #222324;
     /* Dark grey background color */
     margin: 0;
-    padding: 0;
+    padding: 30px;
 }
 
 .titlebar {
-    padding: 30px;
     display: flex;
-    background-color: #222;
+    background-color: #222324;
     justify-content: space-between;
     /* Space between elements */
-    align-items: flex-start;
-    margin-bottom: 10px;
+    align-items: center;
 }
 
 .home-link {
@@ -40,7 +38,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     /* Position the home-link in the top-left corner */
     margin: 0;
     /* Remove margin for precise positioning */
@@ -52,7 +50,6 @@ body {
     font-weight: bolder;
     /* Set the color for "Tattoo" */
     letter-spacing: 5px;
-    margin-top: -2px
     /* Adjust character spacing */
 }
 
@@ -63,7 +60,8 @@ body {
 
 .page-content {
     /* Add a min-height to accommodate gallery and footer */
-    min-height: calc(100vh - 60px); /* Adjust 60px to match the height of the gallery and footer */
+    min-height: calc(100vh - 60px);
+    /* Adjust 60px to match the height of the gallery and footer */
 }
 
 /* Updated styles for the subpage-links container */
@@ -96,11 +94,14 @@ body {
 .gallery {
     column-gap: 20px;
     column-count: 3;
-    padding: 10px;
+    padding: 30px;
     margin-top: 0px;
-    margin-left: 20px; /* Add margin to the left */
-    margin-right: 20px; /* Add margin to the right */
-    overflow: hidden; /* Add overflow hidden to prevent overlapping */
+    margin-left: -20px;
+    /* Add margin to the left */
+    margin-right: -20px;
+    /* Add margin to the right */
+    overflow: hidden;
+    /* Add overflow hidden to prevent overlapping */
 }
 
 .gallery-item {
@@ -114,13 +115,16 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s; /* Slightly slower transition for smoother animation */
+    transition: transform 0.3s;
+    /* Slightly slower transition for smoother animation */
     border-radius: 5px;
-    margin: 0; /* Remove default margin */
+    margin: 0;
+    /* Remove default margin */
 }
 
 .gallery-item img:hover {
-    transform: scale(1.1); /* Increase the scale for a cooler zoom effect */
+    transform: scale(1.1);
+    /* Increase the scale for a cooler zoom effect */
 }
 
 
@@ -133,7 +137,7 @@ body {
 }
 
 /* Media query for mobile layout */
-@media (max-width: 767px) {
+@media (max-width: 854px) {
 
     .gallery {
         column-count: 1;
@@ -151,10 +155,9 @@ body {
         cursor: pointer;
         color: #eee;
         /* Move the menu bars to the left */
-        display: block;
+        margin-top: -20px display: block;
         flex-direction: column;
         align-items: center;
-        margin-top: 9px
     }
 
     /* Styles for the burger bars */
@@ -164,9 +167,8 @@ body {
         height: 6px;
         /* Height of the lines */
         background-color: #eee;
-        /* Line color */
         margin: 10px 0;
-        /* Increase the vertical gap between bars */
+        /* Line color */
         transition: transform 0.3s ease-in-out;
         /* Smooth transition for animation */
     }
@@ -211,9 +213,10 @@ body {
 
     /* Hide the gallery and footer when subpage links are shown */
     .gallery.hide,
-    .page-content.hide{
+    .page-content.hide {
         display: none;
     }
+
     footer.hide .address {
         display: none;
     }
@@ -221,36 +224,59 @@ body {
 
 /* Styles for the footer */
 footer {
-    background-color: #222;
+    background-color: #222324;
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: relative; /* relative position */
-    bottom: 0; /* Stick to the bottom of the viewport */
-    width: 100%; /* Full width */
+    position: relative;
+    /* relative position */
+    bottom: 0;
+    /* Stick to the bottom of the viewport */
+    width: 100%;
+    /* Full width */
 }
 
-footer .address {
+/* Normal state */
+.address a {
+    text-decoration: none;
     margin-bottom: 10px;
     display: block;
+    font-weight: bold;
+    color: #fff;
 }
+
+/* Hover, Visited, Focus, and Active states */
+.address a:hover,
+.address a:visited,
+.address a:focus,
+.address a:active {
+    text-decoration: none;
+    color: #fff;
+}
+
 
 /* Style for social media icons */
 .social {
     text-decoration: none;
-    font-size: 32px; /* Set the icon size */
-    color: orange; /* Set the icon color */
-    transition: transform 0.2s ease-in-out; /* Add a subtle hover effect */
-    margin-right: 10px; /* Add spacing between icons if needed */
+    font-size: 32px;
+    /* Set the icon size */
+    color: orange;
+    /* Set the icon color */
+    transition: transform 0.2s ease-in-out;
+    /* Add a subtle hover effect */
+    margin-right: 10px;
+    /* Add spacing between icons if needed */
 }
 
 .social:hover {
-    transform: scale(1.2); /* Increase size on hover for a pop-out effect */
+    transform: scale(1.2);
+    /* Increase size on hover for a pop-out effect */
 }
 
 /* Styles for social media icons in the footer */
 footer .social span {
-    font-size: 32px; /* Set the desired font size */
+    font-size: 32px;
+    /* Set the desired font size */
 }
 
 /*Styles for Contact Page */
@@ -267,9 +293,19 @@ h2 {
     padding-top: 10px;
     text-align: center;
     font-size: 20px;
-    font-weight: lighter;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold
 }
+
+h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    margin-top: -10px
+}
+
 input {
     background-color: #fff;
     width: 70%;
@@ -296,13 +332,13 @@ textarea {
 input:focus-within {
     outline: none;
     border-color: orange;
-    border-width: 3px; 
+    border-width: 3px;
 }
 
 textarea:focus-within {
     outline: none;
     border-color: orange;
-    border-width: 3px; 
+    border-width: 3px;
 }
 
 button {
@@ -329,16 +365,22 @@ button:hover {
     margin: auto;
     mix-blend-mode: multiply;
 }
+
 /* Style for the map container */
 .map-container {
-    width: 100%; /* Full width */
-    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
-    text-align: center; /* Center the map */
-    margin-top: 20px; /* Adjust margin as needed */
+    width: 100%;
+    /* Full width */
+    max-width: 100%;
+    /* Ensure it doesn't exceed the viewport width */
+    text-align: center;
+    /* Center the map */
+    margin-top: 20px;
+    /* Adjust margin as needed */
 }
 
 /* Style for the map iframe */
 .map-container iframe {
     width: 100%;
-    height: 100%; /* Full height */
+    height: 100%;
+    /* Full height */
 }
